@@ -41,7 +41,7 @@
       <div class="row">
         <div class="col-md-8 col-md-offset-2">
           <h2>Reproducible Research Resources</h2>
-          <p>This page collects starter templates, guidelines, and workflows that my lab uses to promote reproducible, well-documented science. Feel free to adapt these for your own work.</p>
+          <p>This page collects starter templates, guidelines, and workflows that I use in my own reserach to support reproducible, well-documented science. Feel free to adapt these for your own work.</p>
 
           <hr style="margin: 3rem 0;">
 
@@ -50,6 +50,7 @@
           <div style="background: #f6f5ef; padding: 1.5rem; border-radius: 6px; margin-bottom: 1.5rem;">
             <h4 style="margin-top: 0;">Folder & Repository Structure</h4>
             <p><strong>Recommended project layout:</strong></p>
+            <li> Key Principle: Raw data stays raw. Create new files for each processing step and use numbered scripts to show the workflow.</li>
             <pre style="background: #fff; padding: 1rem; border-radius: 4px; overflow-x: auto; font-size: 0.85rem;">project-name/
 ├── README.md
 ├── data/
@@ -105,20 +106,10 @@
             <h4 style="margin-top: 0;">Branching & Workflow</h4>
             <ul style="font-size: 0.95rem;">
               <li><strong>Main branch:</strong> Production-ready code only. Protects published work.</li>
-              <li><strong>Develop branch:</strong> Working branch where we test new analyses.</li>
+              <li><strong>Develop branch:</strong> Working branch where we test new analyses (helpful for collaborative projects if your team also uses github).</li>
               <li><strong>Feature branches:</strong> For experiments. Name them: <code>feature/add-thermal-plots</code> or <code>bugfix/missing-samples</code></li>
               <li><strong>Pull requests:</strong> Always use PRs to merge back to develop/main. Require review before merging.</li>
               <li><strong>Commit messages:</strong> Be descriptive: <code>Add thermal tolerance data for northern populations</code></li>
-            </ul>
-          </div>
-
-          <div style="background: #f6f5ef; padding: 1.5rem; border-radius: 6px; margin-bottom: 1.5rem;">
-            <h4 style="margin-top: 0;">Issues & Project Boards</h4>
-            <ul style="font-size: 0.95rem;">
-              <li>Use <strong>Issues</strong> to track bugs, feature requests, and analysis questions</li>
-              <li>Label issues: <code>bug</code>, <code>enhancement</code>, <code>analysis</code>, <code>priority</code></li>
-              <li>Use <strong>Project Boards</strong> to organize workflow (To Do → In Progress → Done)</li>
-              <li>Link PRs to issues: "Closes #42" in your PR description</li>
             </ul>
           </div>
 
@@ -157,9 +148,6 @@ library(ggplot2)
 # Source functions
 source("scripts/shared_functions.R")
 
-# Set seed for reproducibility
-set.seed(12345)
-
 # Load data
 raw_data <- read.csv("data/raw/raw_data.csv")</pre>
             <p style="margin-bottom: 0;"><a href="#">Download R project template</a> (coming soon)</p>
@@ -192,7 +180,7 @@ raw_data <- read.csv("data/raw/raw_data.csv")</pre>
               <li>Use consistent units and measurement protocols</li>
               <li>Include space for qualitative notes (behavior, conditions, concerns)</li>
               <li>Always collect: date, time, location (GPS if possible), observer initials</li>
-              <li>Make datasheets waterproof or digitize immediately in the field</li>
+              <li>Make datasheets waterproof</li>
             </ul>
             <p style="margin-bottom: 0;"><a href="#">Download field datasheet template</a> (coming soon)</p>
           </div>
@@ -208,10 +196,15 @@ raw_data <- read.csv("data/raw/raw_data.csv")</pre>
               <li>Missing values and how they're coded</li>
               <li>Any data quality issues or caveats</li>
               <li>File version number and modification date</li>
-              <li>License and how the data can be used</li>
             </ul>
           </div>
-
+            <div style="background: #f6f5ef; padding: 1.5rem; border-radius: 6px;">
+            <h4 style="margin-top: 0;">Extra Links</h4>
+            <ul style="font-size: 0.95rem;">
+              <li><a href="https://github.com/estefany-argueta/Useful-Code">Useful code snippets & workflows</a></li>
+              <li><a href="https://github.com/estefany-argueta/Resources">Funding List</a></li>
+            </ul>
+          </div>
           <hr style="margin: 3rem 0;">
 
           <p style="text-align: center; color: #666; font-size: 0.95rem;"><em>These guidelines are living documents. Feedback and contributions are welcome—<a href="contact.html">reach out</a>!</em></p>
