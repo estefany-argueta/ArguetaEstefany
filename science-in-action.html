@@ -4,20 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Science in Action</title>
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.no-icons.min.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
     body { margin: 0; font-family: Arial, sans-serif; background: #f4f7f5; color: #17324d; }
     header { padding: 3rem 1rem; text-align: center; color: white; background: #176b78; }
     h1 { margin: 0 0 .5rem; }
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; padding: 2rem; max-width: 1200px; margin: auto; }
+    .gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; padding: 2rem; max-width: 1500px; margin: auto; }
     figure { margin: 0; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 3px 10px #0002; }
-    img { width: 100%; height: 230px; object-fit: cover; display: block; }
-    figcaption { padding: 1rem; font-weight: bold; }
-    nav { padding: 1rem; text-align: center; background: #17324d; }
-    nav a { color: white; }
+    .gallery img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; cursor: zoom-in; }
+    .gallery img:focus { outline: 4px solid #176b78; outline-offset: -4px; }
+    figcaption { display: none; }
+    .image-dialog { width: min(90vw, 900px); max-width: 900px; padding: 0; border: 0; border-radius: 10px; background: #fff; color: #17324d; box-shadow: 0 12px 50px #0008; }
+    .image-dialog::backdrop { background: #071c24cc; }
+    .image-dialog-viewer { position: relative; background: #102c35; }
+    .image-dialog img { width: 100%; max-height: 70vh; object-fit: contain; display: block; }
+    .image-dialog-nav { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; padding: 0 .75rem; transform: translateY(-50%); pointer-events: none; }
+    .image-dialog-arrow { width: 2.75rem; height: 2.75rem; border: 0; border-radius: 50%; background: #ffffffdd; color: #17324d; font-size: 1.75rem; line-height: 1; cursor: pointer; pointer-events: auto; }
+    .image-dialog-arrow:hover, .image-dialog-arrow:focus { background: #fff; outline: 3px solid #7ca66a; }
+    .image-dialog-content { padding: 1rem 1.25rem 1.25rem; }
+    .image-dialog h2 { margin: 0 0 .35rem; font-size: 1.25rem; }
+    .image-dialog p { margin: 0 0 1rem; }
+    .image-dialog-close { display: block; margin-left: auto; padding: .55rem .9rem; border: 1px solid #17324d; border-radius: 4px; background: #fff; color: #17324d; cursor: pointer; }
+    .image-dialog-close:hover, .image-dialog-close:focus { background: #edf4f2; }
+    @media (max-width: 700px) {
+      .gallery { grid-template-columns: 1fr; padding: 1rem; }
+    }
   </style>
 </head>
 <body>
-  <nav><a href="index.html">Back to home</a></nav>
+  <nav class="navbar navbar-default navbar-sticky" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+      </div>
+      <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Home</a></li>
+          <li class="active"><a href="science-in-action.html">Science in Action</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="community.html">Community</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="cv.html">CV</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <header>
     <h1>Science in Action</h1>
@@ -25,17 +59,86 @@
   </header>
 
   <main class="gallery">
-    <figure><img src="images/main/FDNTeam.jpeg" alt="Research team"><figcaption>Research in the field</figcaption></figure>
-    <figure><img src="images/main/FavNester.jpeg" alt="Nest research"><figcaption>Studying nesting sites</figcaption></figure>
-    <figure><img src="images/main/Respirometry_John_Solem_.jpg" alt="Respirometry research"><figcaption>Measuring respiration</figcaption></figure>
-    <figure><img src="images/main/bsbbluetank.jpg" alt="Black sea bass in a tank"><figcaption>Marine biology research</figcaption></figure>
-    <figure><img src="images/main/bsbfishingme.jpg" alt="Researcher holding a fish"><figcaption>Hands-on science</figcaption></figure>
-    <figure><img src="images/main/fdndoisirmaos.jpg" alt="Field researchers"><figcaption>Exploring nature</figcaption></figure>
-    <figure><img src="images/main/scidiveteam.jpg" alt="Scientific diving team"><figcaption>Scientific diving</figcaption></figure>
-    <figure><img src="images/main/scubastars.jpeg" alt="Scuba divers"><figcaption>Underwater exploration</figcaption></figure>
-    <figure><img src="images/main/turtlewtracks.jpg" alt="Sea turtle tracks"><figcaption>Tracking wildlife</figcaption></figure>
-    <figure><img src="images/projects/male_BSB.jpg" alt="Male black sea bass"><figcaption>Documenting biodiversity</figcaption></figure>
-    <figure><img src="images/projects/turtle01.jpg" alt="Sea turtle"><figcaption>Conservation research</figcaption></figure>
+    <figure><img src="images/main/FDNTeam.jpeg" alt="Research team" tabindex="0" role="button"><figcaption>Research in the field</figcaption></figure>
+    <figure><img src="images/main/FavNester.jpeg" alt="Nest research" tabindex="0" role="button"><figcaption>Studying nesting sites</figcaption></figure>
+    <figure><img src="images/main/Respirometry_John_Solem_.jpg" alt="Respirometry research" tabindex="0" role="button"><figcaption>Measuring respiration</figcaption></figure>
+    <figure><img src="images/main/bsbbluetank.jpg" alt="Black sea bass in a tank" tabindex="0" role="button"><figcaption>Marine biology research</figcaption></figure>
+    <figure><img src="images/main/bsbfishingme.jpg" alt="Researcher holding a fish" tabindex="0" role="button"><figcaption>Hands-on science</figcaption></figure>
+    <figure><img src="images/main/fdndoisirmaos.jpg" alt="Field researchers" tabindex="0" role="button"><figcaption>Exploring nature</figcaption></figure>
+    <figure><img src="images/main/scidiveteam.jpg" alt="Scientific diving team" tabindex="0" role="button"><figcaption>Scientific diving</figcaption></figure>
+    <figure><img src="images/main/scubastars.jpeg" alt="Scuba divers" tabindex="0" role="button"><figcaption>Underwater exploration</figcaption></figure>
+    <figure><img src="images/main/turtlewtracks.jpg" alt="Sea turtle tracks" tabindex="0" role="button"><figcaption>Tracking wildlife</figcaption></figure>
+    <figure><img src="images/projects/male_BSB.jpg" alt="Male black sea bass" tabindex="0" role="button"><figcaption>Documenting biodiversity</figcaption></figure>
+    <figure><img src="images/projects/turtle01.jpg" alt="Sea turtle" tabindex="0" role="button"><figcaption>Conservation research</figcaption></figure>
   </main>
+
+  <dialog class="image-dialog" id="image-dialog" aria-labelledby="image-dialog-title">
+    <div class="image-dialog-viewer">
+      <img id="image-dialog-image" class="image-dialog-image" alt="">
+      <div class="image-dialog-nav" aria-label="Image navigation">
+        <button class="image-dialog-arrow" id="previous-image" type="button" aria-label="Previous image">&#8249;</button>
+        <button class="image-dialog-arrow" id="next-image" type="button" aria-label="Next image">&#8250;</button>
+      </div>
+    </div>
+    <div class="image-dialog-content">
+      <h2 id="image-dialog-title"></h2>
+      <p id="image-dialog-caption"></p>
+      <button class="image-dialog-close" type="button">Close image</button>
+    </div>
+  </dialog>
+
+  <script>
+    const imageDialog = document.getElementById('image-dialog');
+    const dialogImage = document.getElementById('image-dialog-image');
+    const dialogTitle = document.getElementById('image-dialog-title');
+    const dialogCaption = document.getElementById('image-dialog-caption');
+    const closeButton = imageDialog.querySelector('.image-dialog-close');
+    const previousButton = document.getElementById('previous-image');
+    const nextButton = document.getElementById('next-image');
+    const galleryImages = [...document.querySelectorAll('.gallery img')];
+    let currentImageIndex = 0;
+
+    function updateImageDialog() {
+      const image = galleryImages[currentImageIndex];
+      const caption = image.nextElementSibling.textContent;
+      dialogImage.src = image.src;
+      dialogImage.alt = image.alt;
+      dialogTitle.textContent = image.alt;
+      dialogCaption.textContent = caption;
+    }
+
+    function openImageDialog(image) {
+      currentImageIndex = galleryImages.indexOf(image);
+      updateImageDialog();
+      imageDialog.showModal();
+      closeButton.focus();
+    }
+
+    function showAdjacentImage(direction) {
+      currentImageIndex = (currentImageIndex + direction + galleryImages.length) % galleryImages.length;
+      updateImageDialog();
+    }
+
+    galleryImages.forEach((image) => {
+      image.addEventListener('click', () => openImageDialog(image));
+      image.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openImageDialog(image);
+        }
+      });
+    });
+
+    previousButton.addEventListener('click', () => showAdjacentImage(-1));
+    nextButton.addEventListener('click', () => showAdjacentImage(1));
+    closeButton.addEventListener('click', () => imageDialog.close());
+    imageDialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') showAdjacentImage(-1);
+      if (event.key === 'ArrowRight') showAdjacentImage(1);
+    });
+    imageDialog.addEventListener('click', (event) => {
+      if (event.target === imageDialog) imageDialog.close();
+    });
+  </script>
 </body>
 </html>
