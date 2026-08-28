@@ -36,33 +36,91 @@
     </nav>
   </header>
 
-  <main id="main" class="container"></main>
-    <section class="topspace">
-      <h2>Research projects</h2>
-      <p>Click a project to expand details. Add images to `images/projects/` and they will appear here.</p>
-
+  <main id="main" class="container">
+    <section class="topspace projects-section">
+      <div class="projects-intro">
+        <p class="section-kicker">Selected work</p>
+        <h2>Research projects</h2>
+        <p>Field ecology, genomics, and conservation science shaped by questions that matter beyond the lab.</p>
+      </div>
       <div class="projects-grid">
-        <article id="project1" class="project-card">
-          <h3>Mating Behaviors as Buffers for Climate Impacts in Sea Turtle Populations</h3>
-          <div class="project-meta">Location: Brazil (nesting beaches) • Status: Ongoing • Collaborators: Dr. X, Dr. Y</div>
-          <div class="project-body">
-            <p>Overview: Investigating how warming nesting temperatures affect adult sex ratios and whether maternal strategies buffer offspring thermal tolerance.</p>
-            <details class="project-details">
-              <summary>Show project details</summary>
-              <p><strong>Where it works:</strong> Field sites on the northeast Brazilian coast; lab analyses at UMass and partner labs.</p>
-              <p><strong>Collaborators:</strong> Local conservation groups, nesting beach field teams, genetics lab at UMass.</p>
-              <p><strong>Field work:</strong> Nest monitoring, temperature loggers, sample collection for hatchlings and maternal tissues.</p>
-              <p><strong>Lab work:</strong> Incubation experiments, sexing of hatchlings, physiological assays.</p>
-              <p><strong>Bioinformatics:</strong> Genotyping, kinship analysis, population demographic modeling.</p>
-              <p><strong>What was fun:</strong> Long nights on the beach watching hatchlings emerge and cross-checking field notes with local collaborators.</p>
-              <div class="project-gallery">
-                <img src="images/projects/turtle_nest.jpg" alt="Turtle nest" class="project-image">
-                <img src="images/projects/turtle_hatchling.jpg" alt="Hatchling" class="project-image">
-              </div>
-              <p>You can add more photos to the `images_projects/` folder and reference them here.</p>
-            </details>
-          </div>
-        </article>
+  <article id="project1" class="project-card project-card--featured">
+    <h3>Genomic parentage reveals male breeding dynamics in green turtles under feminization concern</h3>
+
+    <div class="project-meta">
+      <span><strong>Location:</strong> Fernando de Noronha, Brazil</span> •
+      <span><strong>Status:</strong> Manuscript in progress</span> •
+      <span><strong>Collaborators:</strong> Dr. Mariana Fuentes, Dr. Will White, Dr. Blair Bentley, Dr. Victoria Quennessen, Fundação Projeto Tamar</span>
+    </div>
+
+    <div class="project-body">
+      <p>
+        <strong>Overview:</strong>
+        Using multi-season SNP-based parentage analysis, I reconstruct breeding structure and mating patterns in a major
+        green turtle rookery to evaluate whether male reproductive dynamics (repeat breeding, polygyny, multiple paternity)
+        could buffer reproduction as hatchling sex ratios become increasingly female-biased under warming.
+      </p>
+
+      <p>
+        <strong>Why it matters:</strong>
+        Climate-driven feminization raises concerns about male scarcity; genomic parentage provides a way to quantify the
+        <em>number and contribution of successful breeders</em>—key inputs for demographic resilience and conservation genetics.
+      </p>
+
+      <p>
+        <strong>My role:</strong>
+        Field sampling coordination (female + hatchling sampling), lab processing and SNP genotyping workflow, parentage/pedigree inference,
+        statistical analysis and visualization in R, and manuscript writing.
+      </p>
+
+      <p>
+        <strong>Methods/toolkit:</strong>
+        GTSeq-style SNP panel • parentage reconstruction (e.g., COLONY) • R (tidyverse/ggplot2) • reproducible, version-controlled workflows
+      </p>
+
+<p>
+  <strong>Recognition:</strong>
+  Archie Carr Award — Best Biology Oral Presentation, International Sea Turtle Symposium (ISTS, 2026).
+</p>
+
+      <details class="project-details">
+        <summary>Show project details</summary>
+
+        <p><strong>Study system:</strong> Fernando de Noronha (Brazil); genomic processing and analyses at UMass Amherst.</p>
+
+        <p><strong>Fieldwork:</strong> Nesting beach monitoring and sampling of nesting females and hatchlings to enable multi-year parentage reconstruction.</p>
+
+        <p><strong>Lab work:</strong> DNA extraction and SNP genotyping (GTSeq-style panel).</p>
+
+        <p><strong>Analyses:</strong> Estimating sire richness, repeat breeding across seasons, polygyny, multiple paternity, and reproductive skew. Where relevant,
+          I frame sex ratio estimates as a <em>successful breeder ratio</em> (inferred sires relative to sampled nesting females) rather than the true OSR of all
+          sexually active adults.</p>
+
+        <p><strong>Outputs:</strong></p>
+        <ul>
+          <li>Manuscript in progress (multi-season genomic parentage; mating system + conservation genetics implications)</li>
+          <li>Conference oral presentation (ISTS 2026; Archie Carr Award)</li>
+        </ul>
+
+        <p><strong>Collaborators & partners:</strong>
+          UMass Molecular Ecology & Conservation Lab; FSU Marine Turtle Research, Ecology and Conservation Group; ICMBio/Centro Tamar/ICMBio; Fundação Projeto Tamar;
+          Golfinho Rotador; volunteers and local collaborators in Fernando de Noronha.
+        </p>
+
+<p><strong>What I enjoyed:</strong>
+  Nights on the beach and witnessing the full sea turtle life cycle firsthand—from hatchlings emerging and sprinting to the ocean to
+  the same females returning repeatedly throughout the breeding season to nest.
+</p>
+
+        <div class="project-gallery">
+          <img src="images/projects/turtle01.jpg" alt="Green turtle in the field" class="project-image" loading="lazy">
+          <img src="images/projects/thumb-placeholder.svg" alt="Project image placeholder" class="project-image" loading="lazy">
+        </div>
+
+        <p>You can add more photos to the <code>images/projects/</code> folder and reference them here.</p>
+      </details>
+    </div>
+  </article>
 
         <article id="project2" class="project-card">
           <h3>Cold tolerance mechanisms in range-expanding black sea bass populations</h3>
@@ -78,8 +136,8 @@
               <p><strong>Bioinformatics:</strong> Population genomics, selection scans, transcriptomic responses to cold shock.</p>
               <p><strong>What was fun:</strong> Bringing together physiology and genomics — and the thrill of a successful cold-challenge run.</p>
               <div class="project-gallery">
-                <img src="images/projects/male_BSB.jpg" alt="Seabass field" class="project-image">
-                <img src="images/projects/seabass_lab.jpg" alt="Seabass lab" class="project-image">
+                <img src="images/projects/male_BSB.jpg" alt="Black sea bass in the field" class="project-image" loading="lazy">
+                <img src="images/projects/thumb-placeholder.svg" alt="Project image placeholder" class="project-image" loading="lazy">
               </div>
               <p>Add images to `images/projects/` and update the filenames in this card to show them.</p>
             </details>
