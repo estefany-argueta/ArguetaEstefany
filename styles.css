@@ -300,7 +300,7 @@ a:hover {
   background-size: cover;
   color: var(--muted);
   min-height: 640px;
-  height:auto
+  height: auto;
   padding: 80px 0 80px 0;
   display: flex;
   align-items: center;
@@ -861,7 +861,7 @@ footer.entry-meta .meta-in {
 .projects-intro > p:last-child { color: #665e55; font-size: 17px; margin: 0; }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   gap: 28px;
   align-items: start;
 }
@@ -873,7 +873,7 @@ footer.entry-meta .meta-in {
   transition: transform var(--transition-fast) ease, box-shadow var(--transition-fast) ease;
 }
 .project-card:hover { transform: translateY(-3px); box-shadow: 0 14px 32px rgba(43,38,32,0.11); }
-.project-card--featured { grid-column: 1 / -1; border-top-color: var(--accent); }
+.project-card--featured { border-top-color: var(--accent); }
 .project-card h3 {
   margin: 0 0 16px;
   font-family: "Merriweather", Georgia, serif;
