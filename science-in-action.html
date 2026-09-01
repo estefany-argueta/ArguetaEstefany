@@ -10,9 +10,9 @@
     body { margin: 0; font-family: Arial, sans-serif; background: #f4f7f5; color: #17324d; }
     header { padding: 3rem 1rem; text-align: center; color: white; background: #176b78; }
     h1 { margin: 0 0 .5rem; }
-    .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.25rem; padding: 2rem; max-width: 1500px; margin: auto; }
+    .gallery { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.75rem; padding: 2.5rem; max-width: 1500px; margin: auto; }
     figure { margin: 0; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 3px 10px #0002; }
-    .gallery img, .gallery video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; cursor: zoom-in; }
+    .gallery img, .gallery video { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; cursor: zoom-in; border-radius: 10px 10px 0 0; }
     .gallery img:focus, .gallery video:focus { outline: 4px solid #176b78; outline-offset: -4px; }
     figcaption { display: none; }
     .image-dialog { width: min(90vw, 900px); max-width: 900px; padding: 0; border: 0; border-radius: 10px; background: #fff; color: #17324d; box-shadow: 0 12px 50px #0008; }
@@ -29,10 +29,10 @@
     .image-dialog-close { display: block; margin-left: auto; padding: .55rem .9rem; border: 1px solid #17324d; border-radius: 4px; background: #fff; color: #17324d; cursor: pointer; }
     .image-dialog-close:hover, .image-dialog-close:focus { background: #edf4f2; }
     @media (max-width: 1000px) {
-      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.5rem; padding: 2rem; }
     }
     @media (max-width: 700px) {
-      .gallery { grid-template-columns: 1fr; padding: 1rem; }
+      .gallery { grid-template-columns: 1fr; gap: 1.25rem; padding: 1.25rem; }
     }
   </style>
 </head>
@@ -63,20 +63,54 @@
   </header>
 
   <main class="gallery">
+    <figure><img src="images/main/Chile2019.jpeg" alt="Chile fieldwork" tabindex="0" role="button"><figcaption>Chile fieldwork</figcaption></figure>
+    <figure><img src="images/main/ChileChiton.jpeg" alt="Chilean coastline research" tabindex="0" role="button"><figcaption>Chilean coastline research</figcaption></figure>
+    <figure><img src="images/main/ChileMountains.jpeg" alt="Mountain landscape fieldwork" tabindex="0" role="button"><figcaption>Landscape fieldwork</figcaption></figure>
+    <figure><img src="images/main/FDN_Landscape.jpg" alt="Beach landscape" tabindex="0" role="button"><figcaption>Beach landscape</figcaption></figure>
+
     <figure><img src="images/main/FDNTeam.jpeg" alt="Research team" tabindex="0" role="button"><figcaption>Research in the field</figcaption></figure>
-    <figure><img src="images/main/FavNester.jpeg" alt="Nest research" tabindex="0" role="button"><figcaption>Studying nesting sites</figcaption></figure>
+    <figure><img src="images/main/FDN_Fieldteam2023.jpeg" alt="Field team 2023" tabindex="0" role="button"><figcaption>Field team 2023</figcaption></figure>
+    <figure><img src="images/main/FDN_EA_F22.jpg" alt="Field sampling" tabindex="0" role="button"><figcaption>Field sampling</figcaption></figure>
+    <figure><img src="images/main/FDN_Crab.jpg" alt="Crab field observation" tabindex="0" role="button"><figcaption>Crab field observation</figcaption></figure>
+
+    <figure><img src="images/main/FDN_nestingmomwithpoleslayout.jpeg" alt="Nest research" tabindex="0" role="button"><figcaption>Studying nesting sites</figcaption></figure>
+    <figure><img src="images/main/FDN_Nesting_EA.jpg" alt="Nesting work" tabindex="0" role="button"><figcaption>Nesting work</figcaption></figure>
+    <figure><img src="images/main/FDN_momnesting.jpeg" alt="Nesting mother turtle" tabindex="0" role="button"><figcaption>Nesting mother turtle</figcaption></figure>
+    <figure><img src="images/main/FDN_nestingmom.jpg" alt="Nesting mom" tabindex="0" role="button"><figcaption>Nesting mom</figcaption></figure>
+    <figure><img src="images/main/FDN_nestpoles.jpeg" alt="Nest poles" tabindex="0" role="button"><figcaption>Nest poles</figcaption></figure>
+    <figure><img src="images/main/FDN_turtlewtracks.jpg" alt="Sea turtle tracks" tabindex="0" role="button"><figcaption>Tracking wildlife</figcaption></figure>
+    <figure><img src="images/main/FDN_hatchlings.jpg" alt="Hatchlings" tabindex="0" role="button"><figcaption>Hatchlings</figcaption></figure>
+    <figure><img src="images/main/FDN_whitehatch.JPG" alt="White hatchling photo" tabindex="0" role="button"><figcaption>White hatchling image</figcaption></figure>
+    <figure><img src="images/projects/FDN_turtle01.jpg" alt="Sea turtle" tabindex="0" role="button"><figcaption>Conservation research</figcaption></figure>
+
+    <figure><img src="images/main/FDN_Scuba.JPG" alt="Scuba fieldwork" tabindex="0" role="button"><figcaption>Scuba fieldwork</figcaption></figure>
+    <figure><img src="images/main/GMS_scidiveteam.jpg" alt="Scientific diving team" tabindex="0" role="button"><figcaption>Scientific diving</figcaption></figure>
+    <figure><img src="images/main/GMS_scubastars.jpeg" alt="Scuba divers" tabindex="0" role="button"><figcaption>Underwater exploration</figcaption></figure>
+    <figure><img src="images/main/NC_GooseneckBarnacles.jpeg" alt="Gooseneck barnacles" tabindex="0" role="button"><figcaption>Gooseneck barnacles</figcaption></figure>
+    <figure><img src="images/main/GMS_seining.jpg" alt="Seining work" tabindex="0" role="button"><figcaption>Seining work</figcaption></figure>
+    <figure><img src="images/main/GMS_mackerel.jpeg" alt="Mackerel research" tabindex="0" role="button"><figcaption>Mackerel research</figcaption></figure>
+    <figure><img src="images/main/GMS_Lobster.jpeg" alt="Lobster study" tabindex="0" role="button"><figcaption>Lobster study</figcaption></figure>
+    <figure><img src="images/main/GMS_Cammi.jpeg" alt="Field team member" tabindex="0" role="button"><figcaption>Field team member</figcaption></figure>
+
     <figure><img src="images/main/Respirometry_John_Solem_.jpg" alt="Respirometry research" tabindex="0" role="button"><figcaption>Measuring respiration</figcaption></figure>
     <figure><img src="images/main/bsbbluetank.jpg" alt="Black sea bass in a tank" tabindex="0" role="button"><figcaption>Marine biology research</figcaption></figure>
+    <figure><img src="images/main/bsbface.jpeg" alt="Black sea bass face" tabindex="0" role="button"><figcaption>Black sea bass face</figcaption></figure>
     <figure><img src="images/main/bsbfishingme.jpg" alt="Researcher holding a fish" tabindex="0" role="button"><figcaption>Hands-on science</figcaption></figure>
-    <figure><img src="images/main/fdndoisirmaos.jpg" alt="Field researchers" tabindex="0" role="button"><figcaption>Exploring nature</figcaption></figure>
-    <figure><img src="images/main/scidiveteam.jpg" alt="Scientific diving team" tabindex="0" role="button"><figcaption>Scientific diving</figcaption></figure>
-    <figure><img src="images/main/scubastars.jpeg" alt="Scuba divers" tabindex="0" role="button"><figcaption>Underwater exploration</figcaption></figure>
-    <figure><img src="images/main/turtlewtracks.jpg" alt="Sea turtle tracks" tabindex="0" role="button"><figcaption>Tracking wildlife</figcaption></figure>
-    <figure><img src="images/projects/turtle01.jpg" alt="Sea turtle" tabindex="0" role="button"><figcaption>Conservation research</figcaption></figure>
-    <figure><video src="images/Seine.mp4" preload="metadata" tabindex="0" role="button" aria-label="Open Seine video"></video><figcaption>Fieldwork on the Seine</figcaption></figure>
-    <figure><video src="images/YOY_Setup.mp4" preload="metadata" muted tabindex="0" role="button" aria-label="Open YOY setup video"></video><figcaption>Young-of-year experimental setup</figcaption></figure>
-    <figure><video src="images/Video Project 1 (1).mp4" preload="metadata" tabindex="0" role="button" aria-label="Open video project 1"></video><figcaption>Video project 1</figcaption></figure>
-    <figure><video src="images/NestingMom.mp4" preload="metadata" tabindex="0" role="button" aria-label="Open nesting mom video"></video><figcaption>Sea turtle nesting fieldwork</figcaption></figure>
+    <figure><img src="images/main/USGS_Brooktrout.jpg" alt="Brook trout study" tabindex="0" role="button"><figcaption>Brook trout study</figcaption></figure>
+    <figure><img src="images/main/FDN_GeneticSampling.jpg" alt="Genetic sampling" tabindex="0" role="button"><figcaption>Genetic sampling</figcaption></figure>
+    <figure><img src="images/main/FDN_SampleRecovery.jpeg" alt="Sample recovery" tabindex="0" role="button"><figcaption>Sample recovery</figcaption></figure>
+    <figure><img src="images/main/FDN_samples.jpg" alt="Samples in the field" tabindex="0" role="button"><figcaption>Samples in the field</figcaption></figure>
+
+    <figure><img src="images/main/FDN_KidsEvent.jpeg" alt="Community outreach event" tabindex="0" role="button"><figcaption>Community outreach</figcaption></figure>
+    <figure><img src="images/main/FDN_Protection.jpeg" alt="Protection work" tabindex="0" role="button"><figcaption>Protection work</figcaption></figure>
+    <figure><img src="images/main/FDN_dolphins.jpg" alt="Dolphin encounter" tabindex="0" role="button"><figcaption>Dolphin encounter</figcaption></figure>
+    <figure><img src="images/main/FDN_doisirmaos.jpg" alt="Field researchers" tabindex="0" role="button"><figcaption>Exploring nature</figcaption></figure>
+
+    <figure><video src="images/main/Seine.mp4" preload="metadata" tabindex="0" role="button" aria-label="Open Seine video"></video><figcaption>Fieldwork on the Seine</figcaption></figure>
+    <figure><video src="images/main/YOY_Setup.mp4" preload="metadata" muted tabindex="0" role="button" aria-label="Open YOY setup video"></video><figcaption>Young-of-year experimental setup</figcaption></figure>
+    <figure><video src="images/main/YOY_tanks.mp4" preload="metadata" tabindex="0" role="button" aria-label="Open YOY tanks video"></video><figcaption>YOY tanks setup</figcaption></figure>
+    <figure><video src="images/main/NestingMom.mp4" preload="metadata" tabindex="0" role="button" aria-label="Open nesting mom video"></video><figcaption>Sea turtle nesting fieldwork</figcaption></figure>
+    <figure><video src="images/main/FDN_Egglaying.MOV" preload="metadata" tabindex="0" role="button" aria-label="Open egg laying video"></video><figcaption>Egg laying in the field</figcaption></figure>
   </main>
 
   <dialog class="image-dialog" id="image-dialog" aria-labelledby="image-dialog-title">

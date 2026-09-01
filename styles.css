@@ -210,10 +210,123 @@ body {
 
 
 **********************************************************************/
+.about-bio {
+  margin: 1.5rem 0 2.5rem;
+  padding: 1.25rem 1.5rem;
+  background: #f6f5ef;
+  border: 1px solid rgba(43, 38, 32, 0.08);
+  border-radius: 8px;
+}
+
+.about-bio h3 {
+  margin-top: 0;
+}
+
+.about-bio p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.about-bio a {
+  text-decoration: underline;
+}
+
+.about-path {
+  margin: 0.5rem 0 1.25rem;
+  border: 1px solid rgba(43, 38, 32, 0.08);
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 6px;
+}
+
+.about-path summary {
+  cursor: pointer;
+  list-style: none;
+  font-weight: 600;
+  padding: 0.8rem 1rem;
+  color: var(--accent);
+}
+
+.about-path summary::-webkit-details-marker {
+  display: none;
+}
+
+.about-path-content {
+  padding: 0 1rem 0.5rem;
+}
+
+.about-path-content p:last-child {
+  margin-bottom: 0;
+}
+
+.pronunciation {
+  color: #5c6660;
+  font-style: italic;
+}
+
+.bio-contact {
+  margin-bottom: 0;
+}
+
 p {
   line-height: 1.6em;
   margin: 0 0 30px 0;
 }
+
+.info-panel,
+.resource-card {
+  display: block;
+  background: #f6f5ef;
+  border: 1px solid rgba(43, 38, 32, 0.08);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+.info-panel summary,
+.resource-card summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.info-panel summary::-webkit-details-marker,
+.resource-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.info-panel[open] summary,
+.resource-card[open] summary {
+  border-bottom: 1px solid rgba(43, 38, 32, 0.08);
+}
+
+.details-content {
+  padding: 1rem 1.25rem 0.25rem;
+}
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.resource-card {
+  min-height: 72px;
+}
+
+.resource-card[open] {
+  grid-column: 1 / -1;
+  min-height: 220px;
+}
+
+.resource-card .details-content {
+  padding-top: 0.75rem;
+}
+
 ul,
 ol {
   line-height: 1.6em;
@@ -294,7 +407,7 @@ a:hover {
 
 **********************************************************************/
 #head {
-  background: linear-gradient(rgba(10,16,22,0.15), rgba(10,16,22,0.05)), url("images/main/fdndoisirmaos.jpg") no-repeat, var(--bg);
+  background: linear-gradient(rgba(10,16,22,0.15), rgba(10,16,22,0.05)), url("images/main/FDN_doisirmaos.jpg") no-repeat, var(--bg);
   /* move focal point upward and ensure the image covers the area */
   background-position: 50% 20%;
   background-size: cover;
